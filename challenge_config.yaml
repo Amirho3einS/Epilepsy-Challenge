@@ -56,10 +56,8 @@ challenge_phases:
         is_visible: True
       - name: publication_url
         is_visible: True
-      - name: image_address
-        is_visible: True
     submission_meta_attributes:
-      - name: TextAttribute
+      - name: image_url
         description: Sample
         type: text
         required: False
