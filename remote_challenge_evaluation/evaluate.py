@@ -1,6 +1,6 @@
-
-
-def evaluate(user_submission_file, phase_codename, test_annotation_file=None, **kwargs):
+def evaluate(
+    user_submission_file, phase_codename, test_annotation_file=None, **kwargs
+):
     print("Starting Evaluation.....")
     """
     Evaluates the submission for a particular challenge phase and returns score
@@ -43,13 +43,14 @@ def evaluate(user_submission_file, phase_codename, test_annotation_file=None, **
         }
     """
 
-    '''
+    """
     # Load test annotation file for current phase
     test_annotation_file = json.loads(open("{phase_codename}_path", "r"))
-    '''
+    """
     output = {}
     if phase_codename == "dev":
         print("Evaluating for Dev Phase")
+        print(kwargs["submission_metadata"])
         output["result"] = [
             {
                 "split": "train_split",

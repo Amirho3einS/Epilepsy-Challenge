@@ -9,10 +9,14 @@ from evaluate import evaluate
 
 # Remote Evaluation Meta Data
 # See https://evalai.readthedocs.io/en/latest/evaluation_scripts.html#writing-remote-evaluation-script
-auth_token = os.environ["AUTH_TOKEN"]
-evalai_api_server = os.environ["API_SERVER"]
-queue_name = os.environ["QUEUE_NAME"]
-challenge_pk = os.environ["CHALLENGE_PK"]
+# auth_token = os.environ["AUTH_TOKEN"]
+auth_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NTU2MDgwNiwianRpIjoiOGZlMmNkYTJkMmE5NGUwOGI4YWU3MTMyZDdiODA3ZDgiLCJ1c2VyX2lkIjo1MDA3NH0.-EhnyFFk22beDpn2c5q6ae7yy4JBKATdNbjFc185F98"
+# evalai_api_server = os.environ["API_SERVER"]
+evalai_api_server = "https://eval.ai"
+# queue_name = os.environ["QUEUE_NAME"]
+queue_name = "seizure-detection-challenge-2423-production-a8032655-de20-41e0-bdf2-49d17318513c"
+# challenge_pk = os.environ["CHALLENGE_PK"]
+challenge_pk = "2423"
 save_dir = os.environ.get("SAVE_DIR", "./")
 
 
@@ -76,6 +80,7 @@ if __name__ == "__main__":
         # Get the message from the queue
         message = evalai.get_message_from_sqs_queue()
         message_body = message.get("body")
+        print(message_body)
         if message_body:
             submission_pk = message_body.get("submission_pk")
             challenge_pk = message_body.get("challenge_pk")

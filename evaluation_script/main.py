@@ -1,7 +1,9 @@
 import random
 
 
-def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwargs):
+def evaluate(
+    test_annotation_file, user_submission_file, phase_codename, **kwargs
+):
     print("Starting Evaluation.....")
     """
     Evaluates the submission for a particular challenge phase and returns score
