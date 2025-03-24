@@ -57,23 +57,35 @@ challenge_phases:
       - name: publication_url
         is_visible: True
     submission_meta_attributes:
-      - name: image
-        description: Sample
+      - name: Image
+        description: Registry path
         type: text
         required: True
-      - name: authors
-        description: Sample
+      - name: Authors
+        description: List of authors
         type: text
-      - name: SingleOptionAttribute
-        description: Sample
+      - name: Abstract
+        description: Short Algorithm description
+        type: text
+      - name: License
+        description: Algorithm License
+        type: text
+      - name: Repository
+        description: Algorithm source code
+        type: text
+      - name: Publication
+        description: DOI to published algorithm
+        type: text
+      - name: Type of Model
+        description: Traditional Machine Learning or Deep Learning
         type: radio
-        options: ["A", "B", "C"]
+        options: ["ML", "DL"]
       - name: Datasets
-        description: Sample
+        description: Datasets used in training
         type: checkbox
         options: ["TUH Seizure", "TUH EEG", "Siena Scalp", "CHB-MIT", "SeizeIT2", "HUP", "Private"]
-      - name: TrueFalseField
-        description: Sample
+      - name: Use of GPU
+        description: Does the algorithm use GPU?
         type: boolean
         required: True
     is_restricted_to_select_one_submission: False
