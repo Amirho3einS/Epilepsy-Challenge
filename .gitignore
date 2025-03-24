@@ -2,6 +2,7 @@ challenge_config.zip
 evaluation_script.zip
 
 **/*.zip
+**/*.pickle
 # virtualenv
 env/
 venv/
